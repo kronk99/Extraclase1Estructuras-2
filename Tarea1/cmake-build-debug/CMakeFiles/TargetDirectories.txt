@@ -1,0 +1,3 @@
+/home/huevitoentorta/Documentos/C++/Tarea1/cmake-build-debug/CMakeFiles/Tarea1.dir
+/home/huevitoentorta/Documentos/C++/Tarea1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/huevitoentorta/Documentos/C++/Tarea1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
