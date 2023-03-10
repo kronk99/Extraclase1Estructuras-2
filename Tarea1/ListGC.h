@@ -6,7 +6,6 @@
 #ifndef TAREA1_LISTGC_H
 #define TAREA1_LISTGC_H
 #include "NodeGC.h"
-#include "Node.h"
 template <class T>
 class ListGC {
 private:
@@ -38,13 +37,13 @@ public:
             currente=currente->getNext();
         }
     }
-    NodeGC<T> *gethead(){
-        return this->head;
+    NodeGC<T> *gethead(){ //retorna un nodoGC
+        return this->head; //este no borra el nodo.
     }
     T *getFirst(){//aca se debe de colocar un condicional.
         //retorna la data del primer elemento.
         T *ptoReturn=this->head->getData();
-        deleteFirst();
+        deleteFirst(); //deberia de borrar el nodo de tipo GC
         return ptoReturn; //creo que esto causara problemas
     }
     void deleteFirst(){

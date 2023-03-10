@@ -3,10 +3,10 @@
 //
 #include <iostream>
 using namespace std;
-#include "Node.h"
+#include "Gcolector.h"
 #ifndef TAREA1_LIST_H
 #define TAREA1_LIST_H
-#include "Gcolector.h"
+#include "Node.h"
 
 
 class List {
@@ -24,6 +24,7 @@ public:
         if(size != 0){ //creo que aca le estoy diciendo que
             //el valor del pointer ahora sea un nuevo espacio en memoria
             Node *newnode = new(gcolector ,data) Node; //no se si este node
+            newnode->insertColector(gcolector);
             //vacio esta creando espacio en memoria, en la buena teoria no.
             newnode->setNext(head);
             head = newnode;
@@ -50,7 +51,9 @@ public:
     void deleteFirst(){
         current = head;
         head = head->getNext();
-
+        cout<<"se llego aca"<<endl;
+        delete current; //deberia de sobrecargarse
+        cout<<"se pudo pasar el delete de la lista"<<endl;
     }
     //falta hacer un  metodo delete
 };

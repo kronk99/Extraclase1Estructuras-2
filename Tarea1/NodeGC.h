@@ -5,7 +5,6 @@
 //la consulta de por que no puedo hacerlo aca.
 #ifndef TAREA1_NODEGC_H
 #define TAREA1_NODEGC_H
-#include "Node.h"
 template <class T>
 class NodeGC {
 private:
@@ -15,7 +14,7 @@ private:
     int size;
 public:
 private:
-    T *data;
+    T *data; //quiza esto deba retornar un puntero de un puntero
     NodeGC *nextptr= nullptr;
 public:
     NodeGC(T* data){

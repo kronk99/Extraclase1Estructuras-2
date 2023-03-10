@@ -25,8 +25,12 @@ int main() {
 
     lista->insertFirst(5);
     lista->insertFirst(8);
+    cout<<"el pointer es"<<lista->gethead()<<endl;
     std::cout<<"no error de momento aaa" <<std::endl;
     lista->printList();
+    //lista->deleteFirst(); //borra la cabeza de la lista.
+    //cout<<"el delete es " << gcolector->getData()<<endl;
+    //cout<<"el nuevo head es:"<<lista->gethead()<<endl;
 
     return 0;
 }

@@ -6,9 +6,10 @@
 //lo que no se es si el espacio en memoria se debe reutilizar o si simplemente
 //debo darle delete y lo que se guarda es el pointer que ahora apunta a nullo.
 #include <iostream>
-#include "ListGC.h"
+
 #ifndef TAREA1_GCOLECTOR_H
 #define TAREA1_GCOLECTOR_H
+#include "ListGC.h"
 template <class T>
 
 
@@ -23,6 +24,12 @@ public:
     }
     void addTrash(T *pointer){
         lista->insertFirst(pointer);
+        size++;
+    }
+    T* getData(){ //devuelve un pointer que apunta a un espacio en memoria
+        //de un nuevo nodo de tipo GC , tengo que darle GetData para obtener un Nodo de tipo Node
+        cout<<"no error"<<endl;
+        return lista->gethead()->getData();
     }
     //creo que este return node puede causar problemas puesto que
     //no estoy incluyendo Node.h en la clase.
@@ -32,6 +39,7 @@ public:
             ptoReturn->setData(data);
             cout<<"la nueva data del espacio en memoria recilado es:"<<ptoReturn->getData();
             return ptoReturn;
+            size--;
         //este metodo retorna el pointer generado en el garbage collector
         //debe elimnar el puntero de la lista, utilizando un delete normal
     }
