@@ -9,7 +9,7 @@ class Node {
 private:
     int number;
     Node *nextptr= nullptr;
-    //dura todoo el periodo de vida del programa
+
 public:
     Node(int data){
         this->number = data;
@@ -18,11 +18,11 @@ public:
     }
     Node *getNext(){
         return this->nextptr;
-        //creo que retorna el puntero dereferenciado.
+        /**creo que retorna el puntero dereferenciado.*/
     }
     void setNext(Node *ptr){
         this->nextptr = ptr;
-        //creo que esto hace un shallow copy
+        /**creo que esto hace un shallow copy*/
     }
     int getData(){
         return this->number;
@@ -42,11 +42,11 @@ public:
         }
         else{
             cout<<"se crea un nuevo espacio en memoria"<<endl;
-            return ::new Node(data); //PUEDE DAR CICLO RECURSIVO SI NO MALLOC
+            return ::new Node(data); /**NEW GLOBAL */
 
         }
     }void operator delete(void *p ){
-        //castea el pointer a borrar de tipo void a nodo para que ingrese al gcolector
+        /**castea el pointer a borrar de tipo void a nodo para que ingrese al gcolector*/
         cout<<"se va a añadir basura"<<endl;
         Gcollector::getInstance()->addTrash(p);
         cout<<"se añadio basura al garbage colector"<<endl;

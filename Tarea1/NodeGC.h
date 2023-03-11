@@ -16,18 +16,18 @@ private:
     void *data; //quiza esto deba retornar un puntero de un puntero
     NodeGC *nextptr= nullptr;
 public:
-    NodeGC(void* data){//constructor de nodo
+    NodeGC(void* data){/**constructor de nodo*/
         this->data= data;
     }
-    NodeGC *getNext(){//retorna el nodo siguiente
+    NodeGC *getNext(){/**retorna el nodo siguiente*/
         return this->nextptr;
 
     }
     void setNext(NodeGC *ptr){
         this->nextptr = ptr;
-        //asigna el nodo siguiente
+        /**asigna el nodo siguiente*/
     }
-    void* getData(){ //retorna la data , para otros metodos debera de ser casteado a node
+    void* getData(){ /**retorna la data , para otros metodos debera de ser casteado a node*/
         return this->data;
     }
 };

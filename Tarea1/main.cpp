@@ -14,8 +14,10 @@ int main() {
     cout<<"el numero es"<<a<<endl;
     return 0;
 }
-//logica del codigo, debo de insertar valores, puedo probar si el puntero se reutiliza haciendo los prints mostrados
-//cuando inserta , crea una instancia unica (singleton) del garbage collector, y es usada a medida que se hacen
-//deletes o new`s
-//CODE MADE BY LUIS GONZALEZ & PABLO SANCHEZ
+
+/**logica del codigo, debo de insertar valores, puedo probar si el puntero se reutiliza haciendo los prints mostrados
+*cuando inserta , crea una instancia unica (singleton) del garbage collector, y es usada a medida que se hacen
+*deletes o new`s
+*CODE MADE BY LUIS GONZALEZ & PABLO SANCHEZ
+*/
 
