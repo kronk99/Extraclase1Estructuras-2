@@ -10,6 +10,8 @@ int main() {
     cout<<Gcollector::getInstance()->getSize()<<endl;
     lista->insertFirst(8);
     lista->printList();
+    int a = 0;
+    cout<<"el numero es"<<a<<endl;
     return 0;
 }
 

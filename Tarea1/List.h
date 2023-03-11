@@ -46,9 +46,10 @@ public:
     void deleteFirst(){
         current = head;
         head = head->getNext();
-        cout<<"se llego aca"<<endl;
+        cout<<"se va a reciclar:"<<current<<endl;
         delete current; //deberia de sobrecargarse
         cout<<"se pudo pasar el delete de la lista"<<endl;
+        size--;
     }
     //falta hacer un  metodo delete
 };

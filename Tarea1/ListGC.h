@@ -47,13 +47,6 @@ public:
     }
     void deleteFirst(){
         if(size != 0){
-            /*current ahora apunta a lo que apunta head
-             head ahora apunta al siguiente
-             por ultimo, se borra a lo que apunta current , que es un espacio
-             en memoria que almacena un valor de tipo NodeGC, el puntero de importancia
-             que es el pointer del espacio en memoria llamado Node no se pierde
-             ya que se regreso inicialmente al usar el metodo getFIrst, ya luego en el programa
-             se dereferencia y le cae encima.*/
             current = head;
             head = head->getNext();
             delete(current);

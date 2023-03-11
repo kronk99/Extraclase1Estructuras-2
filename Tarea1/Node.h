@@ -36,6 +36,7 @@ public:
         if(Gcollector::getInstance()->getSize()!= 0){
             cout<<"se recicla la memoria"<<endl;
             Node *p =static_cast<Node*>(Gcollector::getInstance()->recoverP());
+            cout<<"se reciclo el puntero en memoria:"<<p<<endl;
             p->setData(data);
             return p;
         }
