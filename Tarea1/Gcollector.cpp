@@ -5,12 +5,13 @@
 #include "Gcollector.h"
 Gcollector* Gcollector::pointer= nullptr;
 //constructor no tiene tipo de dato
-Gcollector::Gcollector(){
+Gcollector::Gcollector(){ //constructor de gcolector
     size = 0;
     lista = new ListGC();
 }
 //tipo de dato , clase que pertenece, metodo
-Gcollector* Gcollector:: getInstance(){
+Gcollector* Gcollector:: getInstance(){ //implementacion parcial de singleton para no tener que estar
+    //creando instancias en cada nodo de node.h para sobrecargar new y delete.
     if(pointer== nullptr){
         cout<<"el gcolector estaba nulo"<<endl;
         pointer = new Gcollector();
@@ -21,7 +22,7 @@ Gcollector* Gcollector:: getInstance(){
         return pointer;
     }
 }
-void Gcollector:: addTrash(void *pointer){
+void Gcollector:: addTrash(void *pointer){ //metodo que le añade el pointer a la lista del garbage collector
     lista->insertFirst(pointer);
     size++;
 }
@@ -30,9 +31,9 @@ void* Gcollector:: getData(){ //devuelve un pointer que apunta a un espacio en m
     cout<<"no error"<<endl;
     return lista->gethead()->getData();
 }
-void * Gcollector::recoverP(){
+void * Gcollector::recoverP(){ //metodo que regresa la data del nodo head de la lista de garbage collector
     return lista->getFirst();
 }
-int Gcollector::getSize(){
+int Gcollector::getSize(){ //retorna el tamaño de la lista de garbage collector
     return lista->getSize();
 }

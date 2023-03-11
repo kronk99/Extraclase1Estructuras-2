@@ -1,8 +1,7 @@
 //
 // Created by huevitoentorta on 05/03/23.
-//algo extraño en el codigo es que no puedo sobrecargar el metodo new y delete
-//para esta clase, para este codigo no hay inconveniente, pero se ha de realizar,
-//la consulta de por que no puedo hacerlo aca.
+//codigo del nodo de garbage collector que va a almacenar punteros de tipo node.h ,fue necesario castearlo a
+//void para evitar errores en el include en node.H
 #ifndef TAREA1_NODEGC_H
 #define TAREA1_NODEGC_H
 
@@ -17,18 +16,18 @@ private:
     void *data; //quiza esto deba retornar un puntero de un puntero
     NodeGC *nextptr= nullptr;
 public:
-    NodeGC(void* data){
+    NodeGC(void* data){//constructor de nodo
         this->data= data;
     }
-    NodeGC *getNext(){
+    NodeGC *getNext(){//retorna el nodo siguiente
         return this->nextptr;
-        //creo que retorna el puntero dereferenciado.
+
     }
     void setNext(NodeGC *ptr){
         this->nextptr = ptr;
-        //creo que esto hace un shallow copy
+        //asigna el nodo siguiente
     }
-    void* getData(){
+    void* getData(){ //retorna la data , para otros metodos debera de ser casteado a node
         return this->data;
     }
 };

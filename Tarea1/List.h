@@ -6,8 +6,8 @@ using namespace std;
 #ifndef TAREA1_LIST_H
 #define TAREA1_LIST_H
 #include "Node.h"
-//ysi incluyo solo gCOlector que luego va a caerle e incluir el node, hagamos la prueba.
-
+/*clase lista, funciona como una lista normal con getters y setters,que le introduce a node para interactuar
+ * con la clase node y por consiguiente la memoria*/
 
 class List {
 private:
@@ -18,22 +18,20 @@ private:
 public:
     List(){
         size = 0;
-    }
+    }//metodo que inserta al inicio
     void insertFirst(int data){
-        if(size != 0){ //creo que aca le estoy diciendo que
-            //el valor del pointer ahora sea un nuevo espacio en memoria
-            Node *newnode = new(data) Node; //no se si este node
-            //vacio esta creando espacio en memoria, en la buena teoria no.
-            newnode->setNext(head);
-            head = newnode;
+        if(size != 0){ //si el tamaño de la lista es diferente de 0
+            Node *newnode = new(data) Node; //cree un nuevo nodo, sobrecargando la operacion new
+            newnode->setNext(head); //el nodo siguiente es el head
+            head = newnode;//cambia el head
             size++;
         }
-        else{
+        else{ //si no, cree un nuevo nodo y asigneselo al puntero head
             this->head =new(data) Node;
             size++;
         }
     }
-    void printList(){
+    void printList(){ //metodo que recorre la lista y la imprime
         Node *currente = head;
         for(int i=0;i<size;i++){
             cout<< "el numero es:"<< currente->getData()<<endl;
@@ -43,7 +41,7 @@ public:
     Node *gethead(){
         return this->head;
     }
-    void deleteFirst(){
+    void deleteFirst(){//metodo que elimina el primer elemento de la lista y sobrecarga el metodo delete
         current = head;
         head = head->getNext();
         cout<<"se va a reciclar:"<<current<<endl;
@@ -51,7 +49,6 @@ public:
         cout<<"se pudo pasar el delete de la lista"<<endl;
         size--;
     }
-    //falta hacer un  metodo delete
 };
 
 

@@ -8,7 +8,8 @@
 #include <iostream>
 using namespace std;
 #include "ListGC.h"
-
+/*clase que maneja el recolector de basura, tiene de atributos una lista, que va a almacenar punteros
+ * de tipo node.h(nodo de la lista)*/
 class Gcollector {
 private:
     ListGC *lista;
