@@ -3,10 +3,10 @@
 //
 #include <iostream>
 using namespace std;
-#include "Gcolector.h"
 #ifndef TAREA1_LIST_H
 #define TAREA1_LIST_H
 #include "Node.h"
+//ysi incluyo solo gCOlector que luego va a caerle e incluir el node, hagamos la prueba.
 
 
 class List {
@@ -14,7 +14,6 @@ private:
     //aca deberia de tener una instancia de garbage colector
     Node *head;
     Node *current;
-    Gcolector<Node> *gcolector;
     int size;
 public:
     List(){
@@ -23,15 +22,14 @@ public:
     void insertFirst(int data){
         if(size != 0){ //creo que aca le estoy diciendo que
             //el valor del pointer ahora sea un nuevo espacio en memoria
-            Node *newnode = new(gcolector ,data) Node; //no se si este node
-            newnode->insertColector(gcolector);
+            Node *newnode = new(data) Node; //no se si este node
             //vacio esta creando espacio en memoria, en la buena teoria no.
             newnode->setNext(head);
             head = newnode;
             size++;
         }
         else{
-            this->head = new(gcolector , data) Node;
+            this->head =new(data) Node;
             size++;
         }
     }
@@ -44,9 +42,6 @@ public:
     }
     Node *gethead(){
         return this->head;
-    }
-    void insertGC(Gcolector<Node>* gcolectors){
-        this->gcolector = gcolectors;
     }
     void deleteFirst(){
         current = head;

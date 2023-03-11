@@ -55,6 +55,12 @@ build CMakeFiles/Tarea1.dir/main.cpp.o: CXX_COMPILER__Tarea1_Debug /home/huevito
   OBJECT_DIR = CMakeFiles/Tarea1.dir
   OBJECT_FILE_DIR = CMakeFiles/Tarea1.dir
 
+build CMakeFiles/Tarea1.dir/Gcollector.cpp.o: CXX_COMPILER__Tarea1_Debug /home/huevitoentorta/Documentos/C++/Tarea1/Gcollector.cpp || cmake_object_order_depends_target_Tarea1
+  DEP_FILE = CMakeFiles/Tarea1.dir/Gcollector.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Tarea1.dir
+  OBJECT_FILE_DIR = CMakeFiles/Tarea1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Tarea1
@@ -63,7 +69,7 @@ build CMakeFiles/Tarea1.dir/main.cpp.o: CXX_COMPILER__Tarea1_Debug /home/huevito
 #############################################
 # Link the executable Tarea1
 
-build Tarea1: CXX_EXECUTABLE_LINKER__Tarea1_Debug CMakeFiles/Tarea1.dir/main.cpp.o
+build Tarea1: CXX_EXECUTABLE_LINKER__Tarea1_Debug CMakeFiles/Tarea1.dir/main.cpp.o CMakeFiles/Tarea1.dir/Gcollector.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Tarea1.dir
   POST_BUILD = :

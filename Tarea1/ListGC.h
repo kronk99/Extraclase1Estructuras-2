@@ -6,20 +6,20 @@
 #ifndef TAREA1_LISTGC_H
 #define TAREA1_LISTGC_H
 #include "NodeGC.h"
-template <class T>
+
 class ListGC {
 private:
     //aca deberia de tener una instancia de garbage colector
-    NodeGC<T> *head;
-    NodeGC<T> *current;
+    NodeGC *head;
+    NodeGC *current;
     int size;
 public:
     ListGC(){
         size = 0;
     }
-    void insertFirst(T* data){ //ACA USAR TEMPLATE
+    void insertFirst(void* data){ //ACA USAR TEMPLATE
         if(size != 0){
-            NodeGC<T> *newnode = new NodeGC(data);
+            NodeGC *newnode = new NodeGC(data);
             newnode->setNext(head);
             head = newnode;
             size++;
@@ -30,19 +30,18 @@ public:
         }
     }
     void printList(){ //otro condicional.
-        NodeGC<T> *currente = head;
+        NodeGC *currente = head;
         for(int i=0;i<size;i++){
-
-            std::cout<<"no error de momento xd" << currente->getData()->getData() <<std::endl;
+            //el static cast convierte el getdata (retorna un void) lo castea a nodo y luego le vuelve a pedir la data(numero)
             currente=currente->getNext();
         }
     }
-    NodeGC<T> *gethead(){ //retorna un nodoGC
+    NodeGC* gethead(){ //retorna un nodoGC
         return this->head; //este no borra el nodo.
     }
-    T *getFirst(){//aca se debe de colocar un condicional.
+    void *getFirst(){//aca se debe de colocar un condicional.
         //retorna la data del primer elemento.
-        T *ptoReturn=this->head->getData();
+        void *ptoReturn=static_cast<void *>(this->head->getData());
         deleteFirst(); //deberia de borrar el nodo de tipo GC
         return ptoReturn; //creo que esto causara problemas
     }
